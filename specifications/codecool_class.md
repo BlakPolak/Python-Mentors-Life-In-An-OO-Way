@@ -66,3 +66,33 @@ Gives back a student with the same full name as the argument from ```students```
 
 #### Return value
 ```Mentor``` object
+
+### ```check_overall_energy```
+
+#### Arguments
+None
+
+#### Return value
+* ```knowledge_desire```
+  * data_type: integer
+  * description: sums energy from students and mentors
+
+### ```do_gymnastic```
+
+#### Arguments
+* ```mentor```
+  * data_type: class instance object
+  * description: describes mentor attributes
+
+#### Return value
+None
+
+### ```give_motivational_speech```
+
+#### Arguments
+* ```mentor```
+  * data_type: class instance object
+  * description: describes mentor attributes
+
+#### Return value
+None
