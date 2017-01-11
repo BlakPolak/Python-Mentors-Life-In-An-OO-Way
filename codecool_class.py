@@ -71,7 +71,7 @@ class CodecoolClass:
                                                                            "Hes actual energy level is", student.energy_level)
 
     def give_motivational_speech(self, mentor):
-        print("Mentor " + mentor.first_name + " gives great motivational speech ...")
+        print("Mentor " + str(mentor.first_name) + " gives great motivational speech ...")
         for student in self.students:
             if self.is_paying_attention(student.knowledge_desire):
                 student.knowledge_level += 2

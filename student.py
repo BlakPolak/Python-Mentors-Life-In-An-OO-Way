@@ -12,6 +12,10 @@ class Student(Person):
         self.knowledge_desire = Person.check_if_correct(knowledge_desire, str)
         self.mood_for_gymnastic = Person.check_if_correct(mood_for_gymnastic, str)
 
+    def __str__(self):
+        return self.first_name+" "+self.last_name
+
+
     @staticmethod
     def create_by_csv(filename="data/students.csv"):
         """Loads students data from csv file."""

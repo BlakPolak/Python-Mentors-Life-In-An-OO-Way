@@ -9,6 +9,9 @@ class Mentor(Person):
         self.energy_level = energy_level
         self.humanity_level = humanity_level
 
+    def __str__(self):
+        return self.first_name+" "+self.last_name
+
     @staticmethod
     def create_by_csv(filename="data/mentors.csv"):
         """Loading data from csv file"""
