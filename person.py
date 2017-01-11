@@ -21,3 +21,4 @@ class Person:
         gender_list = ['male', 'female', 'notsure']
         if gender not in gender_list:
             raise TypeError
+
