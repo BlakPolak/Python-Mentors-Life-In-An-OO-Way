@@ -14,7 +14,7 @@ class Mentor(Person):
         """Loading data from csv file"""
         list_of_mentors_object = []
         with open(filename) as file:
-            file_reader =  csv.reader(file)
+            file_reader = csv.reader(file)
             for data in file_reader:
                 list_of_mentors_object.append(Mentor(data[0], data[1], data[2], data[3], data[4], data[5], data[6]))
         return list_of_mentors_object

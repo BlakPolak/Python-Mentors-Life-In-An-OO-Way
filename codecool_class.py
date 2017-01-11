@@ -52,6 +52,12 @@ class CodecoolClass:
             return False
         return True
 
+
+    def is_paying_attention(self, humanity_level):
+        if random.randint(0, 10) < int(humanity_level):
+            return False
+        return True
+
     def do_gymnastics(self, mentor):
         print("Mentor "+mentor.first_name+" is starting proper gymnastics routine...")
         for student in self.students:
@@ -62,4 +68,17 @@ class CodecoolClass:
             else:
                 student.energy_level -= 2
                 print("Student " + student.first_name, student.last_name + " hates gymnastics and loose some energy. "
+                                                                           "Hes actual energy level is", student.energy_level)
+
+    def give_motivational_speech(self, mentor):
+        print("Mentor " + mentor.first_name + " gives great motivational speech ...")
+        for student in self.students:
+            if self.is_paying_attention(student.knowledge_desire):
+                student.knowledge_level += 2
+                print("Student " + student.first_name, student.last_name + " was paying attention and gains some knowledge. "
+                                                                           "Hes actual knowledge level is",
+                                                                            student.knowledge_level)
+            else:
+                student.energy_level -= 2
+                print("Student " + student.first_name, student.last_name + " wasn't paying attention and just loose some energy. "
                                                                            "Hes actual energy level is", student.energy_level)
