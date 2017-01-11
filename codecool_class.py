@@ -1,7 +1,5 @@
-import random
-from mentor import Mentor
 from student import Student
-
+from mentor import Mentor
 
 class CodecoolClass:
 
@@ -46,46 +44,8 @@ class CodecoolClass:
             energy += int(mentor.energy_level)
         print("Overall energy equals ", energy)
 
-    def is_loving_gymnastic(self, mood_for_gymnastic):
-        if random.randint(0, 10) < int(mood_for_gymnastic):
-            return False
-        return True
+    def getMentors(self):
+        return self.mentors
 
-
-    def is_paying_attention(self, knowledge_desire):
-        if random.randint(0, 10) < int(knowledge_desire):
-            return False
-        return True
-
-    def do_gymnastics(self, mentor):
-        print("Mentor "+mentor.first_name+" is starting proper gymnastics routine...")
-        for student in self.students:
-            if student.first_name[-1] == 'a':
-                his_or_her = 'Her'
-            else:
-                his_or_her = 'His'
-            if self.is_loving_gymnastic(student.mood_for_gymnastic):
-                student.energy_level += 2
-                print("Student "+student.first_name, student.last_name+ " enjoyed gymnastics and  gains some energy.\n"+
-                                                                       str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
-            else:
-                student.energy_level -= 2
-                print("Student " + student.first_name, student.last_name + " hates gymnastics and loose some energy.\n"+
-                                                                            str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
-
-    def give_motivational_speech(self, mentor):
-        print("Mentor " + mentor.first_name + " gives great motivational speech ...\n")
-        for student in self.students:
-            if student.first_name[-1] == 'a':
-                his_or_her = 'Her'
-            else:
-                his_or_her = 'His'
-            if self.is_paying_attention(student.knowledge_desire):
-                student.knowledge_level += 2
-                mentor.humanity_level += 1
-                print("Student " + student.first_name, student.last_name + " was paying attention and gains some knowledge.\n" +
-                                                                           str(his_or_her) + " actual knowledge level is", student.knowledge_level, "\n")
-            else:
-                student.energy_level -= 2
-                print("Student " + student.first_name, student.last_name + " wasn't paying attention and just loose some energy.\n" +
-                                                                           str(his_or_her) + " actual energy level is", student.energy_level, "\n")
+    def getStudents(self):
+        return self.students

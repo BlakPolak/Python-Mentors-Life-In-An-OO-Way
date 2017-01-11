@@ -1,6 +1,5 @@
-from person import Person
 import csv
-
+from person import Person
 
 class Student(Person):
     """Creates students."""
