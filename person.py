@@ -20,7 +20,7 @@ class Person:
 
 
     def check_gender(self, gender):
-        gender_list = ['male', 'female', 'notsure']
+        gender_list = ['male', 'female', 'not sure']
         if gender.lower() not in gender_list:
             raise TypeError
 

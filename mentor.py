@@ -5,9 +5,9 @@ import csv
 class Mentor(Person):
     def __init__(self, first_name, last_name, year_of_birth, gender, nickname, energy_level, humanity_level):
         Person.__init__(self, first_name, last_name, year_of_birth, gender)
-        self.nickname = nickname
-        self.energy_level = energy_level
-        self.humanity_level = humanity_level
+        self.nickname = Person.check_if_correct(nickname, str)
+        self.energy_level = Person.check_if_correct(energy_level, str)
+        self.humanity_level = Person.check_if_correct(humanity_level, str)
 
     def __str__(self):
         return self.first_name+" "+self.last_name

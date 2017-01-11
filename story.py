@@ -11,6 +11,7 @@ print("Uploading list of students („Students are initialized from CSV”)")
 time.sleep(2)
 codecool_krk = CodecoolClass.create_local_school()
 codecoolObject = CodecoolClass("Krakow", 2016, codecool_krk[0], codecool_krk[1])
+<<<<<<< HEAD
 print(codecoolObject.location, codecoolObject.year, "Creating local school ...")
 time.sleep(3)
 print("""
