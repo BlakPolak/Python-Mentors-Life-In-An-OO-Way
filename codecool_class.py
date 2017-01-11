@@ -3,11 +3,13 @@ from mentor import Mentor
 
 class CodecoolClass:
 
+
     def __init__(self, location, year, students, mentors):
         self.location = location
         self.year = year
         self.students = students
         self.mentors = mentors
+
 
     @staticmethod
     def create_local_school():
@@ -49,3 +51,9 @@ class CodecoolClass:
 
     def getStudents(self):
         return self.students
+
+    def setMentors(self, mentors):
+        self.mentors = mentors
+
+    def setStudents(self, students):
+        self.students = students

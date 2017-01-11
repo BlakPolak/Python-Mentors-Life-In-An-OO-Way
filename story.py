@@ -32,7 +32,7 @@ time.sleep(1)
 print("Finding mentor(One of our mentor doing daily gymnastics with our class)...")
 randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
 time.sleep(1)
-randomMentor.do_gymnastics(randomMentor, codecoolObject.getStudents())
+randomMentor.do_gymnastics(codecoolObject.students)
 time.sleep(1)
 print("Checking energy overall energy level in class ...")
 time.sleep(1)
@@ -56,7 +56,7 @@ print("Finding mentor (Looking for mentor with outstanding psychological qualiti
 time.sleep(1)
 randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
 time.sleep(1)
-randomMentor.give_motivational_speech(randomMentor, codecoolObject.getStudents())
+randomMentor.give_motivational_speech(codecoolObject.students)
 
 
 

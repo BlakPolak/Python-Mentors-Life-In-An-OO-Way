@@ -36,8 +36,8 @@ class Mentor(Person):
             return False
         return True
 
-    def do_gymnastics(self, mentor, students):
-        print("Mentor "+mentor.first_name+" is starting proper gymnastics routine...")
+    def do_gymnastics(self, students):
+        print("Mentor "+self.first_name+" is starting proper gymnastics routine...")
         for student in students:
             if student.first_name[-1] == 'a':
                 his_or_her = 'Her'
@@ -45,6 +45,8 @@ class Mentor(Person):
                 his_or_her = 'His'
             if self.is_loving_gymnastic(student.mood_for_gymnastic):
                 student.energy_level += 2
+                self.humanity_level += 1
+                print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
                 print("Student "+student.first_name, student.last_name+ " enjoyed gymnastics and  gains some energy.\n"+
                                                                        str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
             else:
@@ -52,8 +54,8 @@ class Mentor(Person):
                 print("Student " + student.first_name, student.last_name + " hates gymnastics and loose some energy.\n"+
                                                                             str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
 
-    def give_motivational_speech(self, mentor, students):
-        print("Mentor " + mentor.first_name + " gives great motivational speech ...\n")
+    def give_motivational_speech(self, students):
+        print("Mentor " + self.first_name + " gives great motivational speech ...\n")
         for student in students:
             if student.first_name[-1] == 'a':
                 his_or_her = 'Her'
@@ -61,7 +63,8 @@ class Mentor(Person):
                 his_or_her = 'His'
             if self.is_paying_attention(student.knowledge_desire):
                 student.knowledge_level += 2
-                mentor.humanity_level += 1
+                self.humanity_level += 1
+                print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
                 print("Student " + student.first_name, student.last_name + " was paying attention and gains some knowledge.\n" +
                                                                            str(his_or_her) + " actual knowledge level is", student.knowledge_level, "\n")
             else:
