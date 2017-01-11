@@ -7,10 +7,10 @@ class Student(Person):
     def __init__(self, first_name, last_name, year_of_birth, gender, knowledge_level, energy_level, knowledge_desire,
                  mood_for_gymnastic):
         Person.__init__(self, first_name, last_name, year_of_birth, gender)
-        self.knowledge_level = knowledge_level
-        self.energy_level = energy_level
-        self.knowledge_desire = knowledge_desire
-        self.mood_for_gymnastic = mood_for_gymnastic
+        self.knowledge_level = Person.check_if_correct(knowledge_level, str)
+        self.energy_level = Person.check_if_correct(energy_level, str)
+        self.knowledge_desire = Person.check_if_correct(knowledge_desire, str)
+        self.mood_for_gymnastic = Person.check_if_correct(mood_for_gymnastic, str)
 
     @staticmethod
     def create_by_csv(filename="data/students.csv"):
