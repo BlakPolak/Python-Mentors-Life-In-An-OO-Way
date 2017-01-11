@@ -11,7 +11,6 @@ print("Uploading list of students („Students are initialized from CSV”)")
 time.sleep(2)
 codecool_krk = CodecoolClass.create_local_school()
 codecoolObject = CodecoolClass("Krakow", 2016, codecool_krk[0], codecool_krk[1])
-<<<<<<< HEAD
 print(codecoolObject.location, codecoolObject.year, "Creating local school ...")
 time.sleep(3)
 print("""
@@ -38,6 +37,11 @@ time.sleep(1)
 print("Checking energy overall energy level in class ...")
 time.sleep(1)
 codecoolObject.check_overall_energy()
+time.sleep(1)
+print("Searching for random student to coding dojo ...")
+time.sleep(1)
+codecoolObject.find_student_by_full_name(str(codecool_krk[0][random.randint(0, 6)]))
+time.sleep(1)
 os.system('clear')
 print("Meanwhile in the kitchen… ")
 time.sleep(1)
@@ -53,7 +57,6 @@ time.sleep(1)
 codecoolObject.find_mentor_by_full_name(str(codecool_krk[1][random.randint(0, 2)]))
 time.sleep(1)
 codecoolObject.give_motivational_speech(codecool_krk[1][random.randint(0, 2)])
-time.sleep(1)
-codecoolObject.find_student_by_full_name(str(codecool_krk[0][random.randint(0, 6)]))
+
 
 
