@@ -53,8 +53,8 @@ class CodecoolClass:
         return True
 
 
-    def is_paying_attention(self, humanity_level):
-        if random.randint(0, 10) < int(humanity_level):
+    def is_paying_attention(self, knowledge_desire):
+        if random.randint(0, 10) < int(knowledge_desire):
             return False
         return True
 
@@ -75,6 +75,7 @@ class CodecoolClass:
         for student in self.students:
             if self.is_paying_attention(student.knowledge_desire):
                 student.knowledge_level += 2
+                mentor.humanity_level += 1
                 print("Student " + student.first_name, student.last_name + " was paying attention and gains some knowledge. "
                                                                            "Hes actual knowledge level is",
                                                                             student.knowledge_level)
