@@ -6,10 +6,7 @@ class Student(Person):
     """Creates students."""
     def __init__(self, first_name, last_name, year_of_birth, gender, knowledge_level, energy_level, knowledge_desire,
                  mood_for_gymnastic):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.year_of_birth = year_of_birth
-        self.gender = gender
+        Person.__init__(self, first_name, last_name, year_of_birth, gender)
         self.knowledge_level = knowledge_level
         self.energy_level = energy_level
         self.knowledge_desire = knowledge_desire
