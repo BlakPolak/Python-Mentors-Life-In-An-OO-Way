@@ -3,7 +3,7 @@ __pycache__/
 */__pycache__/
 *.py[cod]
 *$py.class
-.idea
-
+<<<<<<< HEAD
+.idea/
 # OS-X
 .DS_Store
