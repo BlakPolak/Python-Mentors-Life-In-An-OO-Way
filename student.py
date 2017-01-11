@@ -5,9 +5,9 @@ class Student(Person):
     def __init__(self, knowledge_level, energy_level, knowledge_desire, mood_for_gymnastic,
                  first_name, last_name, year_of_birth, gender):
         self.knowledge_level = knowledge_level
-        self.energy_level = energy_level
+        self.energy_level = int(energy_level)
         self.knowledge_desire = knowledge_desire
-        self.mood_for_gymnastic = mood_for_gymnastic
+        self.mood_for_gymnastic = int(mood_for_gymnastic)
         Person.__init__(self, first_name, last_name, year_of_birth, gender)
 
     @staticmethod
