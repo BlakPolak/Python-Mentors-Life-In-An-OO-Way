@@ -100,7 +100,7 @@ None
 #### Return value
 None
 
-### ```coding_dojo```
+### ```do_coding_dojo```
 
 #### Arguments
 * ```student```
@@ -110,7 +110,7 @@ None
 #### Return value
 None
 
-### ```joke```
+### ```say_joke```
 
 #### Arguments
 * ```student```

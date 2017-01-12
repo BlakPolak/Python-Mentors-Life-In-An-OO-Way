@@ -90,8 +90,8 @@ class Mentor(Person):
         print("Student " + student.first_name, student.last_name + " energy has increased!\n" +
               " Actual energy level is", student.energy_level, "\n")
 
-    def coding_dojo(self, student):
+    def do_coding_dojo(self, student):
         pass
 
-    def joke(self, student):
+    def say_joke(self, student):
         pass
