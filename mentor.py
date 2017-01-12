@@ -116,10 +116,10 @@ class Mentor(Person):
         os.system('clear')
 
     def do_coding_dojo(self, student1, student2):
-        print("\033[1mMentor " + self.first_name + "do Coding Dojo for", student1.first_name, student1.last_name,
+        print("\033[1mMentor " + self.first_name + " do Coding Dojo for ", student1.first_name, student1.last_name,
               "and", student2.first_name, student2.last_name + "\033[0m\n")
         time.sleep(2)
-        self.humanity_level -= 3
+        self.humanity_level += 1
         student1.energy_level -= 2
         student2.energy_level -= 3
         student1.knowledge_level += 2
@@ -136,13 +136,13 @@ class Mentor(Person):
         os.system('clear')
 
     def say_joke(self, student):
-        print("\033[1mMentor " + self.first_name + "say joke to", student.first_name, student.last_name)
+        print("\033[1mMentor " + self.first_name + " say joke to ", student.first_name, student.last_name)
         choose_joke = random.randint(0, 2)
         if choose_joke == 0:
             print("""
                     FirstJoke(BAD)
             """)
-            self.humanity_level -= 2
+            self.humanity_level += 1
             student.energy_level -= 2
             print("\x1b[32mMentors humanity has decreased!!!\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
@@ -158,7 +158,7 @@ class Mentor(Person):
             print("""
                     SecondJoke(Good)
             """)
-            self.humanity_level += 1
+            self.humanity_level += 2
             student.energy_level += 2
             print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
@@ -174,7 +174,7 @@ class Mentor(Person):
             print("""
                     ThirdJoke(VeryGood)
             """)
-            self.humanity_level += 2
+            self.humanity_level += 3
             student.energy_level += 3
             print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
