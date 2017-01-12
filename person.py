@@ -1,4 +1,4 @@
-
+import os
 
 class Person:
     """Creates Persons."""
@@ -16,9 +16,16 @@ class Person:
         """Validates data type."""
         if type(validate) != check_type:
             raise TypeError
-        if validate.isdigit():
-            validate = int(validate)
-        return validate
+        elif type(validate) == check_type:
+            if validate.isdigit():
+                validate = int(validate)
+                return validate
+            elif all(i.isalpha() or i.isspace() for i in validate):
+                return validate
+            else:
+                raise TypeError
+
+
 
     def check_gender(self, gender):
         """Checks student's gender."""
