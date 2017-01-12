@@ -26,13 +26,13 @@ class Mentor(Person):
         return list_of_mentors_object
 
     def is_loving_gymnastic(self, mood_for_gymnastic):
-        if random.randint(0, 10) < int(mood_for_gymnastic):
+        if random.randint(0, 10) < mood_for_gymnastic:
             return False
         return True
 
 
     def is_paying_attention(self, knowledge_desire):
-        if random.randint(0, 10) < int(knowledge_desire):
+        if random.randint(0, 10) < knowledge_desire:
             return False
         return True
 
