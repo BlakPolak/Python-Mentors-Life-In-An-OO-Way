@@ -39,3 +39,83 @@ All data from Person and all of the arguments of the class itself.
 
 #### Return value
 None
+
+### ```is_loving_gymnastic```
+
+#### Arguments
+* ```mood_for_gymnastic```
+  * data_type: int
+  * description: describes level of student mood for gymnastic.
+
+#### Return value
+Boolean
+
+### ```is_paying_attention```
+
+#### Arguments
+* ```knowledge_desire```
+  * data_type: int
+  * description: describes level of student knowledge desire.
+
+#### Return value
+Boolean
+
+### ```do_gymnastic```
+
+#### Arguments
+* ```students```
+  * data_type: list of objects
+  * description: describes students attributes
+
+#### Return value
+None
+
+### ```give_motivational_speech```
+
+#### Arguments
+* ```students```
+  * data_type: list of objects
+  * description: describes students attributes
+
+#### Return value
+None
+
+### ```give_private_mentoring```
+
+#### Arguments
+* ```student```
+  * data_type: class instance object
+  * description: describes student attributes
+
+#### Return value
+None
+
+### ```drink_coffee_with_students```
+
+#### Arguments
+* ```student```
+  * data_type: class instance object
+  * description: describes student attributes
+
+#### Return value
+None
+
+### ```coding_dojo```
+
+#### Arguments
+* ```student```
+  * data_type: class instance object
+  * description: describes student attributes
+
+#### Return value
+None
+
+### ```joke```
+
+#### Arguments
+* ```student```
+  * data_type: class instance object
+  * description: describes student attributes
+
+#### Return value
+None
