@@ -103,9 +103,13 @@ None
 ### ```do_coding_dojo```
 
 #### Arguments
-* ```student```
+* ```student1```
   * data_type: class instance object
-  * description: describes student attributes
+  * description: describes first student attributes
+ 
+* ```student2```
+  * data_type: class instance object
+  * description: describes second student attributes
 
 #### Return value
 None
