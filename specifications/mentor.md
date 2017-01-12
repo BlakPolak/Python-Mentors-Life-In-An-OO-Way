@@ -41,7 +41,7 @@ All data from Person and all of the arguments of the class itself.
 None
 
 ### ```is_loving_gymnastic```
-
+Check student mood for gymnastic (Good/Bad)
 #### Arguments
 * ```mood_for_gymnastic```
   * data_type: int
@@ -51,7 +51,7 @@ None
 Boolean
 
 ### ```is_paying_attention```
-
+Checks student desire for getting new knowledge (Good/Bad)
 #### Arguments
 * ```knowledge_desire```
   * data_type: int
@@ -61,7 +61,7 @@ Boolean
 Boolean
 
 ### ```do_gymnastic```
-
+Mentor do gymnastic with student and that can increase or decrease students energy level and mentor humanity level.
 #### Arguments
 * ```students```
   * data_type: list of objects
@@ -71,7 +71,7 @@ Boolean
 None
 
 ### ```give_motivational_speech```
-
+Mentor give motivational speech for student and that can increase or decrease students energy level, students knowledge level and mentor humanity level.
 #### Arguments
 * ```students```
   * data_type: list of objects
@@ -81,6 +81,7 @@ None
 None
 
 ### ```give_private_mentoring```
+Mentor give private mentoring for student and that can increase or decrease students energy level, students knowledge level and mentor humanity level.
 
 #### Arguments
 * ```student```
@@ -91,6 +92,7 @@ None
 None
 
 ### ```drink_coffee_with_students```
+Mentor drink coffee with student and that can increase or decrease students energy level, students knowledge level and mentor humanity level.
 
 #### Arguments
 * ```student```
@@ -101,13 +103,16 @@ None
 None
 
 ### ```do_coding_dojo```
+Mentor do coding dojo for two students and that can increase or decrease students energy level, students knowledge level and mentor humanity level.
 
 #### Arguments
 * ```student1```
+
   * data_type: class instance object
   * description: describes first student attributes
  
 * ```student2```
+
   * data_type: class instance object
   * description: describes second student attributes
 
@@ -115,6 +120,7 @@ None
 None
 
 ### ```say_joke```
+Mentor say joke and that can increase or decrease students energy level, students knowledge level and mentor humanity level.
 
 #### Arguments
 * ```student```

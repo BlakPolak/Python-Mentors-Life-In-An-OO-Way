@@ -1,5 +1,7 @@
 import csv
 import random
+import time
+import os
 from person import Person
 
 
@@ -37,7 +39,8 @@ class Mentor(Person):
         return True
 
     def do_gymnastics(self, students):
-        print("Mentor "+self.first_name+" is starting proper gymnastics routine...")
+        print("\033[1mMentor "+self.first_name+" is starting proper gymnastics routine...\033[0m\n")
+        time.sleep(2)
         for student in students:
             if student.first_name[-1] == 'a':
                 his_or_her = 'Her'
@@ -47,16 +50,21 @@ class Mentor(Person):
                 student.energy_level += 2
                 self.humanity_level += 1
                 print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
-                print("Student "+student.first_name, student.last_name+ " enjoyed gymnastics and  gains some energy.\n"+
-                                                                       str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
+                print("\x1b[32mStudent "+student.first_name, student.last_name + " enjoyed gymnastics and  gains some energy.\x1b[0m\n"+
+                      str(his_or_her) + " actual energy level is", student.energy_level, "\n")
+                time.sleep(2)
             else:
                 student.energy_level -= 2
                 self.humanity_level -= 1
-                print("Student " + student.first_name, student.last_name + " hates gymnastics and loose some energy.\n"+
-                                                                            str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
+                print("\x1b[31mStudent " + student.first_name, student.last_name
+                      + " hates gymnastics and loose some energy.\x1b[0m\n"+
+                      str(his_or_her) + " actual energy level is", student.energy_level, "\n")
+        time.sleep(2)
+        os.system('clear')
 
     def give_motivational_speech(self, students):
-        print("Mentor " + self.first_name + " gives great motivational speech ...\n")
+        print("\033[1mMentor " + self.first_name + " gives great motivational speech ...\033[0m\n")
+        time.sleep(2)
         for student in students:
             if student.first_name[-1] == 'a':
                 his_or_her = 'Her'
@@ -66,37 +74,116 @@ class Mentor(Person):
                 student.knowledge_level += 2
                 self.humanity_level += 1
                 print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
-                print("Student " + student.first_name, student.last_name + " was paying attention and gains some knowledge.\n" +
-                                                                           str(his_or_her) + " actual knowledge level is", student.knowledge_level, "\n")
+                print("\x1b[32mStudent " + student.first_name, student.last_name +
+                      " was paying attention and gains some knowledge.\x1b[0m\n" +
+                      str(his_or_her) + " actual knowledge level is", student.knowledge_level, "\n")
+                time.sleep(2)
             else:
                 student.energy_level -= 2
                 self.humanity_level -= 1
-                print("Student " + student.first_name, student.last_name + " wasn't paying attention and just loose some energy.\n" +
-                                                                           str(his_or_her) + " actual energy level is", student.energy_level, "\n")
+                print("\x1b[31mStudent " + student.first_name, student.last_name +
+                      " wasn't paying attention and just loose some energy.\x1b[0m\n" +
+                      str(his_or_her) + " actual energy level is", student.energy_level, "\n")
+            time.sleep(2)
+        os.system('clear')
 
     def give_private_mentoring(self, student):
-        print("Mentor " + self.first_name + " gives private mentoring for ", student.first_name, student.last_name)
+        print("\033[1mMentor " + self.first_name + " gives private mentoring for ",
+              student.first_name, student.last_name + "\033[0m\n")
+        time.sleep(2)
         self.humanity_level += 1
         student.knowledge_level += 2
+        print("\x1b[32mMentors humanity has increased.\n" + self.first_name,
+              self.last_name + " has " + str(self.humanity_level) + " humanity points now.\x1b[0m")
+        time.sleep(0.5)
         print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
-        print("Student " + student.first_name, student.last_name + " begins to understand a lot more!\n" +
-              " actual knowledge level is", student.knowledge_level, "\n")
+        print("\x1b[32mStudent " + student.first_name, student.last_name + " begins to understand a lot more!\x1b[0m\n" +
+              "Actual knowledge level is", student.knowledge_level, "\n")
+        time.sleep(2)
+        os.system('clear')
 
     def drink_coffee_with_student(self, student):
-        print("Mentor " + self.first_name + " drinks coffee with ", student.first_name, student.last_name)
+        print("\033[1mMentor " + self.first_name + " drinks coffee with ",
+              student.first_name, student.last_name + "\033[0m\n")
+        time.sleep(2)
         self.humanity_level += 1
         student.energy_level += 2
         print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
-        print("Student " + student.first_name, student.last_name + " energy has increased!\n" +
-              " Actual energy level is", student.energy_level, "\n")
+        time.sleep(0.5)
+        print("\x1b[32mStudent " + student.first_name, student.last_name + " energy has increased!\x1b[0m\n" +
+              "Actual energy level is", student.energy_level, "\n")
+        time.sleep(2)
+        os.system('clear')
 
     def do_coding_dojo(self, student1, student2):
-        print("Mentor " + self.first_name + "do Coding Dojo for", student1.first_name, student1.last_name, "and" , student2.first_name, student2.last_name)
-        self.humanity_level += 1
-        student.energy_level += 2
-        print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
-        print("Student " + student.first_name, student.last_name + " energy has increased!\n" +
-              " Actual energy level is", student.energy_level, "\n")
+        print("\033[1mMentor " + self.first_name + "do Coding Dojo for", student1.first_name, student1.last_name,
+              "and", student2.first_name, student2.last_name + "\033[0m\n")
+        time.sleep(2)
+        self.humanity_level -= 3
+        student1.energy_level -= 2
+        student2.energy_level -= 3
+        student1.knowledge_level += 2
+        student2.knowledge_level += 2
+        print("\x1b[31mMentors humanity has decreased!!!\x1b[0m\n" + self.first_name, self.last_name +
+              " has " + str(self.humanity_level) + " humanity points now.")
+        time.sleep(0.5)
+        print("\x1b[32mStudent " + student1.first_name, student1.last_name + " energy has decreased!\x1b[0m\n" +
+              "Actual energy level is", student1.energy_level, "\n")
+        time.sleep(0.5)
+        print("\x1b[32mStudent " + student2.first_name, student2.last_name + " energy has increased!\x1b[0m\n" +
+              "Actual energy level is", student2.energy_level, "\n")
+        time.sleep(3)
+        os.system('clear')
 
     def say_joke(self, student):
-        pass
+        print("\033[1mMentor " + self.first_name + "say joke to", student.first_name, student.last_name)
+        choose_joke = random.randint(0, 2)
+        if choose_joke == 0:
+            print("""
+                    FirstJoke(BAD)
+            """)
+            self.humanity_level -= 2
+            student.energy_level -= 2
+            print("\x1b[32mMentors humanity has decreased!!!\x1b[0m\n" + self.first_name,
+                  self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
+            time.sleep(0.5)
+            print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
+                  "Actual energy level is", student.energy_level, "\n")
+            time.sleep(0.5)
+            print("\x1b[33mStudent " + student.first_name, student.last_name +
+                  "knowledge level is the same... o_O\x1b[0m\n" +
+                  "Actual knowledge level is", student.energy_level, "\n")
+            time.sleep(3)
+        elif choose_joke == 1:
+            print("""
+                    SecondJoke(Good)
+            """)
+            self.humanity_level += 1
+            student.energy_level += 2
+            print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
+                  self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
+            time.sleep(0.5)
+            print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
+                  "Actual energy level is", student.energy_level, "\n")
+            time.sleep(0.5)
+            print("\x1b[33mStudent " + student.first_name, student.last_name +
+                  "knowledge level is the same... o_O\x1b[0m\n" +
+                  "Actual energy level is", student.energy_level, "\n")
+            time.sleep(3)
+        else:
+            print("""
+                    ThirdJoke(VeryGood)
+            """)
+            self.humanity_level += 2
+            student.energy_level += 3
+            print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
+                  self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
+            time.sleep(0.5)
+            print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
+                  "Actual energy level is", student.energy_level, "\n")
+            time.sleep(0.5)
+            print("\x1b[33mStudent " + student.first_name, student.last_name +
+                  "knowledge level is the same... o_O\x1b[0m\n" +
+                  "Actual energy level is", student.energy_level, "\n")
+            time.sleep(3)
+        os.system('clear')
