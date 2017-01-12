@@ -51,6 +51,7 @@ class Mentor(Person):
                                                                        str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
             else:
                 student.energy_level -= 2
+                self.humanity_level -= 1
                 print("Student " + student.first_name, student.last_name + " hates gymnastics and loose some energy.\n"+
                                                                             str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
 
@@ -69,7 +70,22 @@ class Mentor(Person):
                                                                            str(his_or_her) + " actual knowledge level is", student.knowledge_level, "\n")
             else:
                 student.energy_level -= 2
+                self.humanity_level -= 1
                 print("Student " + student.first_name, student.last_name + " wasn't paying attention and just loose some energy.\n" +
                                                                            str(his_or_her) + " actual energy level is", student.energy_level, "\n")
 
+    def give_private_mentoring(self, student):
+        print("Mentor " + self.first_name + " gives private mentoring for ", student.first_name, student.last_name)
+        self.humanity_level += 1
+        student.knowledge_level += 2
+        print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
+        print("Student " + student.first_name, student.last_name + " begins to understand a lot more!\n" +
+              " actual knowledge level is", student.knowledge_level, "\n")
 
+    def drink_coffee_with_student(self, student):
+        print("Mentor " + self.first_name + " drinks coffee with ", student.first_name, student.last_name)
+        self.humanity_level += 1
+        student.energy_level += 2
+        print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
+        print("Student " + student.first_name, student.last_name + " energy has increased!\n" +
+              " Actual energy level is", student.energy_level, "\n")

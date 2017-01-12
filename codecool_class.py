@@ -46,14 +46,11 @@ class CodecoolClass:
             energy += int(mentor.energy_level)
         print("Overall energy equals ", energy)
 
-    def getMentors(self):
-        return self.mentors
 
-    def getStudents(self):
-        return self.students
-
-    def setMentors(self, mentors):
-        self.mentors = mentors
-
-    def setStudents(self, students):
-        self.students = students
+    def mentor_became_human(self):
+        for mentor in self.mentors:
+            if mentor.humanity_level > 10:
+                print(mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human"
+                                                                                      "and is ready to deliver to Hindus!")
+                return True
+        return False

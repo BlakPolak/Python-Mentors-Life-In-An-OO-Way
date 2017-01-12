@@ -58,6 +58,19 @@ randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentor
 time.sleep(1)
 randomMentor.give_motivational_speech(codecoolObject.students)
 
+while not codecoolObject.mentor_became_human():
+    time.sleep(2)
+    randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
+    mentor_action = random.randint(0, 2)
+    if mentor_action == 0:
+        randomMentor.give_motivational_speech(codecoolObject.students)
+    elif mentor_action == 1:
+        student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+        randomMentor.give_private_mentoring(student)
+    else:
+        student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+        randomMentor.drink_coffee_with_student(student)
+
 
 
 
