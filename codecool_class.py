@@ -50,7 +50,7 @@ class CodecoolClass:
     def is_any_mentor_became_human(self):
         for mentor in self.mentors:
             if mentor.humanity_level >= 10:
-                print(mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human "
-                                                                                      "and is ready to deliver to Hindus!")
+                print("\033[44m"+mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human "
+                                                                                      "and is ready to deliver to Hindus!\033[0m")
                 return True
         return False

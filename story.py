@@ -31,16 +31,20 @@ def main():
     print("\033[1m"+"\nEnergy level drops dramatically down! We need someone who wakes us up immediately!"+"\033[0m")
     time.sleep(2)
     print("One of our mentor doing daily gymnastics with our class. Finding mentor... ")
-    random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
+    random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 3)]))
     time.sleep(2)
     random_mentor.do_gymnastics(codecoolObject.students)
     time.sleep(2)
     print("\033[1m"+"\nLet's code something! Searching for random student to coding dojo ... "
                     "\nSomeones gonna cry like a baby!"+"\033[0m")
     time.sleep(3)
-    student_for_dojo = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
-    time.sleep(3)
-    random_mentor.do_coding_dojo(student_for_dojo, codecoolObject.students[random.randint(0, 5)])
+    random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 3)]))
+    student_for_dojo1 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+    while True:
+        student_for_dojo2 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+        if student_for_dojo1 is not student_for_dojo2:
+            random_mentor.do_coding_dojo(student_for_dojo1, student_for_dojo2)
+            break
     time.sleep(3)
     codecoolObject.check_overall_energy()
     print("Coding dojos cost a lot of energy, but what the students are not doing to cheer mentors!")
@@ -49,6 +53,9 @@ def main():
     time.sleep(2)
     print("Time for small talk! Mentor drinking coffee with student. They both gets some points to energy level. "
           "Miracle at coffee machine!")
+    random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 3)]))
+    student_for_coffee = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+    random_mentor.drink_coffee_with_student(student_for_coffee)
     time.sleep(2)
     print("Lunch break is over, time to go back to learning! \nChecking overall energy level in class ...")
     codecoolObject.check_overall_energy()
@@ -67,24 +74,24 @@ def main():
     print("\033[1m"+"Mentors care about each student. If you have a problem - ask mentor. Day by day..."+"\033[0m")
     while not codecoolObject.is_any_mentor_became_human():
         day_index += 1
-        print("\nDay {}".format(day_index))
-        random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
-        mentor_action = random.randint(0, 3)
-        student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
-        if mentor_action == 0:
-            while True:
-                student2 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
-                if student.last_name != student2.last_name:
-                    random_mentor.do_coding_dojo(student, student2)
-                    break
-        elif mentor_action == 1:
-            random_mentor.give_private_mentoring(student)
-        elif mentor_action == 2:
-            random_mentor.say_joke(student)
-        else:
+        print("\033[44mDay {}                                                           \033[0m".format(day_index))
+        for mentor in codecoolObject.mentors:
+            mentor_action = random.randint(0, 3)
             student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
-            random_mentor.drink_coffee_with_student(student)
-        time.sleep(2)
+            if mentor_action == 0:
+                while True:
+                    student2 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+                    if student is not student2:
+                        mentor.do_coding_dojo(student, student2)
+                        break
+            elif mentor_action == 1:
+                mentor.give_private_mentoring(student)
+            elif mentor_action == 2:
+                mentor.say_joke(student)
+            else:
+                mentor.drink_coffee_with_student(student)
+        input("Enter to continue ...")
+        os.system('clear')
 
 if __name__ == "__main__":
     main()
