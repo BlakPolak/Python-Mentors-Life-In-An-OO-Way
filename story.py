@@ -67,7 +67,7 @@ def main():
     time.sleep(1)
     randomMentor.give_motivational_speech(codecoolObject.students)
 
-    while not codecoolObject.mentor_became_human():
+    while not codecoolObject.is_any_mentor_became_human():
         day_index += 1
         print("\nDay {}".format(day_index))
         randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
