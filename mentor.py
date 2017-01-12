@@ -4,8 +4,26 @@ from person import Person
 
 
 class Mentor(Person):
+    """
+    This class represents real mentor in Codecool
+
+        Args:
+            nickname: stores mentor nickname
+            energy_level: stores mentor energy
+            humanity_level: describes how far is mentor from becoming human
+
+    """
 
     def __init__(self, first_name, last_name, year_of_birth, gender, nickname, energy_level, humanity_level):
+        """
+        Initialize object args
+            Args:
+                nickname: stores mentor nickname
+                energy_level: stores mentor energy
+                humanity_level: describes how far is mentor from becoming human
+            Returns:
+            None
+        """
         Person.__init__(self, first_name, last_name, year_of_birth, gender)
         self.nickname = Person.check_if_correct(nickname, str)
         self.energy_level = Person.check_if_correct(energy_level, str)
@@ -17,7 +35,15 @@ class Mentor(Person):
 
     @staticmethod
     def create_by_csv(filename="data/mentors.csv"):
-        """Loading data from csv file"""
+        """
+        Loads mentors data from csv file.
+
+        Args:
+            filename: file path for csv file
+
+        Returns:
+            List of Mentor objects
+        """
         list_of_mentors_object = []
         with open(filename) as file:
             file_reader = csv.reader(file)
@@ -26,17 +52,46 @@ class Mentor(Person):
         return list_of_mentors_object
 
     def is_loving_gymnastic(self, mood_for_gymnastic):
+        """
+        Checks if particular student is happy doing gymnastics
+
+        Args:
+            mood_for_gymnastic: describes level of student mood for gymnastic.
+
+        Returns:
+            True: if student enjoys gymnastics
+            False: if student doesnt enjoy gymnastics
+        """
         if random.randint(0, 10) < mood_for_gymnastic:
             return False
         return True
 
 
     def is_paying_attention(self, knowledge_desire):
+        """
+        Checks if particular student pay attention doing during speech
+
+        Args:
+            knowledge_desire: describes level of student knowledge desire.
+
+        Returns:
+            True: if student pays attention
+            False: if student doesnt pay attention
+        """
         if random.randint(0, 10) < knowledge_desire:
             return False
         return True
 
     def do_gymnastics(self, students):
+        """
+        Executes mentor's gymnastic program in order to increase students energy.
+
+        Args:
+            students: list of Students objects
+
+        Returns:
+            None
+        """
         print("Mentor "+self.first_name+" is starting proper gymnastics routine...")
         for student in students:
             if student.first_name[-1] == 'a':
@@ -56,6 +111,15 @@ class Mentor(Person):
                                                                             str(his_or_her)+ " actual energy level is", student.energy_level, "\n")
 
     def give_motivational_speech(self, students):
+        """
+        Executes mentor's motivational speech program in order to increase students knowledge.
+
+        Args:
+            students: list of Students objects
+
+        Returns:
+            None
+        """
         print("Mentor " + self.first_name + " gives great motivational speech ...\n")
         for student in students:
             if student.first_name[-1] == 'a':
@@ -75,6 +139,15 @@ class Mentor(Person):
                                                                            str(his_or_her) + " actual energy level is", student.energy_level, "\n")
 
     def give_private_mentoring(self, student):
+        """
+        Executes mentor's private mentoring program in order to increase student knowledge.
+
+        Args:
+            student: Student object
+
+        Returns:
+            None
+        """
         print("Mentor " + self.first_name + " gives private mentoring for ", student.first_name, student.last_name)
         self.humanity_level += 1
         student.knowledge_level += 2
@@ -83,6 +156,15 @@ class Mentor(Person):
               " actual knowledge level is", student.knowledge_level, "\n")
 
     def drink_coffee_with_student(self, student):
+        """
+        Executes mentor's drink coffee program in order to increase student energy.
+
+        Args:
+            student: Student object
+
+        Returns:
+            None
+        """
         print("Mentor " + self.first_name + " drinks coffee with ", student.first_name, student.last_name)
         self.humanity_level += 1
         student.energy_level += 2

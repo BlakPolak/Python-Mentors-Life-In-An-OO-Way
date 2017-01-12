@@ -47,7 +47,7 @@ class CodecoolClass:
         print("Overall energy equals ", energy)
 
 
-    def mentor_became_human(self):
+    def is_any_mentor_became_human(self):
         for mentor in self.mentors:
             if mentor.humanity_level >= 10:
                 print(mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human "

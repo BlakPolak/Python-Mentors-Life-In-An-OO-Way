@@ -77,8 +77,8 @@ None
   * data_type: integer
   * description: sum of energy students and mentors
 
-### ```mentor_became_human```
-Checks if mentor become human being
+### ```is_any_mentor_became_human```
+Checks if mentor became human being (when his humanity_level variable reaches 10). 
 #### Arguments
 None
 
