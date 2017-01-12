@@ -64,12 +64,18 @@ def main():
         day_index += 1
         print("\nDay {}".format(day_index))
         randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
-        mentor_action = random.randint(0, 2)
+        mentor_action = random.randint(0, 3)
+        student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
         if mentor_action == 0:
-            randomMentor.give_motivational_speech(codecoolObject.students)
+            while True:
+                student2 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
+                if student.last_name != student2.last_name:
+                    randomMentor.do_coding_dojo(student, student2)
+                    break
         elif mentor_action == 1:
-            student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
             randomMentor.give_private_mentoring(student)
+        elif mentor_action == 2:
+            randomMentor.say_joke(student)
         else:
             student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
             randomMentor.drink_coffee_with_student(student)
