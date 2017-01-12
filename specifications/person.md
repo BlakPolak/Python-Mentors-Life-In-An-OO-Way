@@ -41,3 +41,23 @@ All of the arguments of the class itself.
 
 #### Return value
 None
+
+### ```check_if_correct```
+Validates data type.
+
+#### Arguments
+
+validate, check_type
+
+#### Return value
+integer
+
+### ```check_gender```
+Checks student's gender.
+
+#### Arguments
+
+gender
+
+#### Return value
+None

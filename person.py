@@ -1,6 +1,7 @@
 
 
 class Person:
+    """Creates Persons."""
     def __init__(self, first_name, last_name, year_of_birth, gender):
         self.check_if_correct(first_name, str)
         self.first_name = first_name
@@ -12,14 +13,15 @@ class Person:
 
     @staticmethod
     def check_if_correct(validate, check_type):
+        """Validates data type."""
         if type(validate) != check_type:
             raise TypeError
         if validate.isdigit():
             validate = int(validate)
         return validate
 
-
     def check_gender(self, gender):
+        """Checks student's gender."""
         gender_list = ['male', 'female', 'not sure']
         if gender.lower() not in gender_list:
             raise TypeError
