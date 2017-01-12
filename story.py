@@ -1,12 +1,13 @@
 import random
 import time
 import os
-import csv
-import student
+#import csv
+#import student
 from codecool_class import CodecoolClass
 
 
 def main():
+    day_index = 0
     print("Uploading list of mentors („Mentors are initialized from CSV”)")
     print("Uploading list of students („Students are initialized from CSV”)")
     time.sleep(2)
@@ -60,7 +61,8 @@ def main():
     randomMentor.give_motivational_speech(codecoolObject.students)
 
     while not codecoolObject.mentor_became_human():
-        time.sleep(2)
+        day_index += 1
+        print("\nDay {}".format(day_index))
         randomMentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 2)]))
         mentor_action = random.randint(0, 2)
         if mentor_action == 0:
@@ -71,7 +73,7 @@ def main():
         else:
             student = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
             randomMentor.drink_coffee_with_student(student)
-
+        time.sleep(2)
 
 if __name__ == "__main__":
     main()

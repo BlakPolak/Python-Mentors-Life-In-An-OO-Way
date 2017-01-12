@@ -18,7 +18,6 @@ class Person:
             validate = int(validate)
         return validate
 
-
     def check_gender(self, gender):
         gender_list = ['male', 'female', 'not sure']
         if gender.lower() not in gender_list:
