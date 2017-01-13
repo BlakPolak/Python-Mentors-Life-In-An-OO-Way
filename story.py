@@ -23,7 +23,7 @@ def main():
     humans due to plague of laziness created, ironically by technology development ... Once a level of humanity is acquired
     the Mentor Android will be sent to new Codecool School to teach a class of extraordinary programmers.
     """)
-    time.sleep(3)
+    time.sleep(25)
     os.system('clear')
     print("\033[1m"+"Ordinary school day is full of events. We start by checking students energy level. "
           "Let's see who's been programming all night! "+"\033[0m", "\nChecking class energy level ...")
