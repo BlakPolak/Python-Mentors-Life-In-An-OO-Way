@@ -118,7 +118,8 @@ class CodecoolClass:
         for mentor in self.mentors:
             if mentor.humanity_level >= 10:
                 print("\033[44m"+mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human "
-                                                                                      "and is ready to deliver to Hindus!\033[0m")
+                    "Is ready to deliver to new Codecool facility!", mentor.first_name, mentor.last_name,
+                    "may the Force be with You!")
                 time.sleep(3)
                 return True
         return False
