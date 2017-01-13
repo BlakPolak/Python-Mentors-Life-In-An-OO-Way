@@ -187,7 +187,8 @@ class Mentor(Person):
         time.sleep(2)
         self.humanity_level += 1
         student.energy_level += 2
-        print(self.first_name, self.last_name + " has " + str(self.humanity_level) + " humanity points now")
+        print("\x1b[32mMentors humanity has increased.\x1b[0m\n"+ self.first_name,
+              self.last_name + " has " + str(self.humanity_level) + " humanity points now")
         time.sleep(0.5)
         print("\x1b[32mStudent " + student.first_name, student.last_name + " energy has increased!\x1b[0m\n" +
               "Actual energy level is", student.energy_level, "\n")
@@ -203,7 +204,7 @@ class Mentor(Person):
         Returns:
             None
         """
-        print("\n\033[1mMentor " + self.first_name + " do Coding Dojo for ", student1.first_name, student1.last_name,
+        print("\n\033[1mMentor " + self.first_name + " does Coding Dojo for ", student1.first_name, student1.last_name,
               "and", student2.first_name, student2.last_name + "\033[0m\n")
         time.sleep(2)
         self.humanity_level += 1
@@ -238,8 +239,8 @@ class Mentor(Person):
         Returns:
             None
         """
-        
-        print("\n\033[1mMentor " + self.first_name + " say joke to", student.first_name, student.last_name + "\033[0m\n")
+
+        print("\n\033[1mMentor " + self.first_name + " says joke to ", student.first_name, student.last_name + "\033[0m\n")
         choose_joke = random.randint(0, 2)
         if choose_joke == 0:
             print("""
