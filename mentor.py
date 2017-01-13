@@ -194,6 +194,15 @@ class Mentor(Person):
         time.sleep(2)
 
     def do_coding_dojo(self, student1, student2):
+        """
+        Executes mentor's coding dojo program in order to increase student knowledge.
+
+        Args:
+            student1: Student object
+            student2: Student object
+        Returns:
+            None
+        """
         print("\n\033[1mMentor " + self.first_name + " do Coding Dojo for ", student1.first_name, student1.last_name,
               "and", student2.first_name, student2.last_name + "\033[0m\n")
         time.sleep(2)
@@ -221,6 +230,15 @@ class Mentor(Person):
         time.sleep(3)
 
     def say_joke(self, student):
+        """
+        Executes mentor's program to say a joke in order to increase student energy.
+
+        Args:
+            student: Student object
+        Returns:
+            None
+        """
+        
         print("\n\033[1mMentor " + self.first_name + " say joke to", student.first_name, student.last_name + "\033[0m\n")
         choose_joke = random.randint(0, 2)
         if choose_joke == 0:

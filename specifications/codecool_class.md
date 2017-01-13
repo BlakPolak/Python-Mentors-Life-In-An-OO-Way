@@ -68,14 +68,12 @@ Gives back a student with the same full name as the argument from ```students```
 ```Mentor``` object
 
 ### ```check_overall_energy```
-Checks energy for all school members
+Displays energy for all school members
 #### Arguments
 None
 
 #### Return value
-* ```knowledge_desire```
-  * data_type: integer
-  * description: sum of energy students and mentors
+None
 
 ### ```is_any_mentor_became_human```
 Checks if mentor became human being (when his humanity_level variable reaches 10). 
@@ -85,3 +83,4 @@ None
 #### Return value
 * ```True or False```
   * data_type: Boolean
+  * desciption: True if mentor reaches humanity_level :10, False if not

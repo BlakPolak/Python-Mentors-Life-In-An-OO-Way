@@ -2,9 +2,30 @@ from student import Student
 from mentor import Mentor
 
 class CodecoolClass:
+    """
+    This class represents a real class @ Codecool, containing mentors and students working at the class.
 
+    Args:
+        location: stores the city where the the class started
+        year: stores the year when the class started
+        mentors: stores the mentors of the class
+        students: stores the students of the class
+
+    """
 
     def __init__(self, location, year, students, mentors):
+        """
+        Initialize object args
+
+            Args:
+                location: stores the city where the the class started
+                year: stores the year when the class started
+                mentors: stores the mentors of the class
+                students: stores the students of the class
+
+            Returns:
+            None
+        """
         self.location = location
         self.year = year
         self.students = students
@@ -13,11 +34,29 @@ class CodecoolClass:
 
     @staticmethod
     def create_local_school():
+        """
+        Creates a CodecoolClass object having some real-life data from the implementer students' real class.
+
+        Args:
+            None
+
+        Returns:
+            CodecoolClass object
+        """
         students = Student.create_by_csv("data/students.csv")
         mentors = Mentor.create_by_csv("data/mentors.csv")
         return students, mentors
 
     def find_student_by_full_name(self, full_name):
+        """
+        Searches for a student named 'full name' from student database
+
+        Args:
+            full_name: holds the full name of the student to be found
+
+        Returns:
+            Student object
+        """
         name_list = full_name.split(" ")
         for student in self.students:
             if student.first_name == name_list[0]:
@@ -28,6 +67,15 @@ class CodecoolClass:
         return False
 
     def find_mentor_by_full_name(self, full_name):
+        """
+        Searches for a mentor named 'full name' from mentor database
+
+        Args:
+            full_name: holds the full name of the mentor to be found
+
+        Returns:
+            Mentor object
+            """
         name_list = full_name.split(" ")
         for mentor in self.mentors:
             if mentor.first_name == name_list[0]:
@@ -39,6 +87,15 @@ class CodecoolClass:
 
 
     def check_overall_energy(self):
+        """
+        Displays energy for all school members
+
+        Args:
+            None
+
+        Returns:
+            None
+        """
         energy = 0
         for student in self.students:
             energy += int(student.energy_level)
@@ -48,9 +105,19 @@ class CodecoolClass:
 
 
     def is_any_mentor_became_human(self):
+        """
+        Checks if mentor became human being (when his humanity_level variable reaches 10).
+
+        Args:
+            None
+
+        Returns:
+            True if mentor reaches humanity_level :10, False if not
+        """
         for mentor in self.mentors:
             if mentor.humanity_level >= 10:
                 print("\033[44m"+mentor.first_name, mentor.last_name+" called "+ mentor.nickname+" has become human "
                                                                                       "and is ready to deliver to Hindus!\033[0m")
+                time.sleep(3)
                 return True
         return False
