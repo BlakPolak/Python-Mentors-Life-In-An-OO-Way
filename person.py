@@ -41,8 +41,6 @@ class Person:
             else:
                 raise TypeError
 
-
-
     def check_gender(self, gender):
         """
         Checks if variable is correct type of gender, if not - it raises an error

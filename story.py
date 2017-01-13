@@ -5,6 +5,7 @@ from codecool_class import CodecoolClass
 
 
 def main():
+    os.system("clear")
     day_index = 0
     print("\033[1m"+"Uploading list of mentors..."+"\033[0m", "\nMentors are initialized!")
     print("\033[1m"+"\nUploading list of students..."+"\033[0m", "\nStudents are initialized!")
@@ -19,24 +20,24 @@ def main():
     are invited to learn how to code. It's a place in which an experiment is happening. Once entering you are given a quest.
     You meet a group of uncertain about their humanity androids and you are asked to help to program them in such a way
     so that they felt more human - alike. The price is high - we need more programming teachers and there is less and less
-    humans due to plague of laziness created ironically by technology development… Once a level of humanity is acquired
-    the Mentor Android is will being sent to new Codecool School to teach new class of extraordinary programmers.
+    humans due to plague of laziness created, ironically by technology development ... Once a level of humanity is acquired
+    the Mentor Android will be sent to new Codecool School to teach a class of extraordinary programmers.
     """)
     time.sleep(3)
     os.system('clear')
     print("\033[1m"+"Ordinary school day is full of events. We start by checking students energy level. "
-          "Let's check who's programme all night! "+"\033[0m", "\nChecking class energy level ...")
+          "Let's see who's been programming all night! "+"\033[0m", "\nChecking class energy level ...")
     time.sleep(2)
     codecoolObject.check_overall_energy()
     print("\033[1m"+"\nEnergy level drops dramatically down! We need someone who wakes us up immediately!"+"\033[0m")
     time.sleep(2)
-    print("One of our mentor doing daily gymnastics with our class. Finding mentor... ")
+    print("One of our mentor will be doing daily gymnastics with our class. Finding mentor... ")
     random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 3)]))
     time.sleep(2)
     random_mentor.do_gymnastics(codecoolObject.students)
     time.sleep(2)
-    print("\033[1m"+"\nLet's code something! Searching for random student to coding dojo ... "
-                    "\nSomeones gonna cry like a baby!"+"\033[0m")
+    print("\033[1m"+"\nLet's code something! Searching for random student to do coding dojo ... "
+                    "\nSomeone's gonna cry like a baby!"+"\033[0m")
     time.sleep(3)
     random_mentor = codecoolObject.find_mentor_by_full_name(str(codecoolObject.mentors[random.randint(0, 3)]))
     student_for_dojo1 = codecoolObject.find_student_by_full_name(str(codecoolObject.students[random.randint(0, 5)]))
@@ -47,7 +48,7 @@ def main():
             break
     time.sleep(3)
     codecoolObject.check_overall_energy()
-    print("Coding dojos cost a lot of energy, but what the students are not doing to cheer mentors!")
+    print("Coding dojos cost a lot of energy, but what the students wouldn't do to cheer their mentors up?!")
     os.system('clear')
     print("\033[1m"+"Meanwhile in the kitchen… "+"\033[0m")
     time.sleep(2)
@@ -71,7 +72,7 @@ def main():
     time.sleep(1)
     random_mentor.give_motivational_speech(codecoolObject.students)
     os.system("clear")
-    print("\033[1m"+"Mentors care about each student. If you have a problem - ask mentor. Day by day..."+"\033[0m")
+    print("\033[1m"+"Mentors care about every student. If you have a problem - ask mentor. Day by day..."+"\033[0m")
     while not codecoolObject.is_any_mentor_became_human():
         day_index += 1
         print("\033[44mDay {}                                                           \033[0m".format(day_index))
