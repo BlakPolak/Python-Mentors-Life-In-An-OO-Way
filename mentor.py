@@ -165,8 +165,8 @@ class Mentor(Person):
         time.sleep(2)
         self.humanity_level += 1
         student.knowledge_level += 2
-        print("\x1b[32mMentors humanity has increased.\n" + self.first_name,
-              self.last_name + " has " + str(self.humanity_level) + " humanity points now.\x1b[0m")
+        print("\x1b[32mMentors humanity has increased.\x1b[0m\n" + self.first_name,
+              self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
         time.sleep(0.5)
         print("\x1b[32mStudent " + student.first_name, student.last_name + " begins to understand a lot more!\x1b[0m\n" +
               "Actual knowledge level is", student.knowledge_level, "\n")
@@ -201,43 +201,61 @@ class Mentor(Person):
         student1.energy_level -= 2
         student2.energy_level -= 3
         student1.knowledge_level += 2
-        student2.knowledge_level += 2
+        student2.knowledge_level -= 1
         print("\x1b[31mMentors humanity has decreased!!!\x1b[0m\n" + self.first_name, self.last_name +
               " has " + str(self.humanity_level) + " humanity points now.")
         time.sleep(0.5)
-        print("\x1b[32mStudent " + student1.first_name, student1.last_name + " energy has decreased!\x1b[0m\n" +
+        print("\x1b[32mStudent " + student1.first_name, student1.last_name + " energy has increased!\x1b[0m\n" +
               "Actual energy level is", student1.energy_level, "\n")
         time.sleep(0.5)
-        print("\x1b[32mStudent " + student2.first_name, student2.last_name + " energy has increased!\x1b[0m\n" +
+        print("\x1b[31mStudent " + student2.first_name, student2.last_name + " energy has decreased!\x1b[0m\n" +
               "Actual energy level is", student2.energy_level, "\n")
+        time.sleep(0.5)
+        print("\x1b[32mStudent " + student1.first_name, student1.last_name +
+              " know much more now. \x1b[0m\n" +
+              "Actual knowledge level is", student1.knowledge_level, "\n")
+        time.sleep(0.5)
+        print("\x1b[31mStudent " + student2.first_name, student2.last_name +
+              " doesn't understand to much.\x1b[0m\n" +
+              "Actual knowledge level is", student2.knowledge_level, "\n")
         time.sleep(3)
 
     def say_joke(self, student):
-        print("\n\033[1mMentor " + self.first_name + " say joke to", student.first_name, student.last_name)
+        print("\n\033[1mMentor " + self.first_name + " say joke to", student.first_name, student.last_name + "\033[0m\n")
         choose_joke = random.randint(0, 2)
         if choose_joke == 0:
             print("""
-                    FirstJoke(BAD)
-            """)
+                    Why do Java programmers have to wear glasses?
+                    """)
+            time.sleep(3)
+            print("""
+                    Because they don't C#
+                    \n""")
+            time.sleep(3)
             self.humanity_level += 1
             student.energy_level -= 2
-            print("\x1b[32mMentors humanity has decreased!!!\x1b[0m\n" + self.first_name,
+            print("\x1b[32mMentors humanity has increased.\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
             time.sleep(0.5)
             print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
                   "Actual energy level is", student.energy_level, "\n")
             time.sleep(0.5)
             print("\x1b[33mStudent " + student.first_name, student.last_name +
-                  "knowledge level is the same... o_O\x1b[0m\n" +
+                  " knowledge level is the same... o_O\x1b[0m\n" +
                   "Actual knowledge level is", student.energy_level, "\n")
             time.sleep(3)
         elif choose_joke == 1:
             print("""
-                    SecondJoke(Good)
-            """)
+                    What would be if women have programmed nuclear power plants?
+                    """)
+            time.sleep(3)
+            print("""
+                    Nothing would be!
+                    \n""")
+            time.sleep(3)
             self.humanity_level += 2
             student.energy_level += 2
-            print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
+            print("\x1b[32mMentors humanity has increased.\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
             time.sleep(0.5)
             print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
@@ -249,11 +267,16 @@ class Mentor(Person):
             time.sleep(3)
         else:
             print("""
-                    ThirdJoke(VeryGood)
-            """)
+                    What's the object-oriented way to become wealthy?
+                    """)
+            time.sleep(3)
+            print("""
+                    Inheritance.\n
+                    """)
+            time.sleep(3)
             self.humanity_level += 3
             student.energy_level += 3
-            print("\x1b[31mMentors humanity has increased.\x1b[0m\n" + self.first_name,
+            print("\x1b[32mMentors humanity has increased.\x1b[0m\n" + self.first_name,
                   self.last_name + " has " + str(self.humanity_level) + " humanity points now.")
             time.sleep(0.5)
             print("\x1b[31mStudent " + student.first_name, student.last_name + " energy has decreased!\x1b[0m\n" +
